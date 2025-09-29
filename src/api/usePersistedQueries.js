@@ -312,7 +312,7 @@ export function useBAPageBySlug(variation = "master", fetchTrigger) {
   useEffect(() => {
     async function fetchData() {
       const queryVariables = {
-        slug,
+   
         variation,
       };
 
