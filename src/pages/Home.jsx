@@ -90,7 +90,7 @@ const Home = () => {
   const featuredServices = data?.featuredServices;
 */
 
-  const image = REACT_APP_HOST_URI + data?.image?._path;
+  const image = REACT_APP_HOST_URI + data?.image?._dynamicUrl;
   const title = data?.title;
   const slug = data?.slug;
   const content = data?.content;
