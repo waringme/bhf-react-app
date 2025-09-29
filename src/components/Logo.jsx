@@ -1,7 +1,7 @@
 import lightIcon from "../assets/SecurBank-icon-light.svg";
 import darkIcon from "../assets/SecurBank-icon-dark.svg";
-import british from "../assets/british-airways-logo.png"
-import oneWorldLogo from "../assets/Oneworld-Logo.png"
+import british from "../assets/BHF-logo-desktop.svg"
+
 import "./Logo.scss";
 
 /**
@@ -11,7 +11,7 @@ const Logo = ({ variant }) => {
   const icon = variant === "british" ? british : oneWorldLogo;
   return (
     <a href="/" className="hover-effect logo-wrapper">
-      <img src={icon} alt="British Airways" className={"icon " + variant} />
+      <img src={icon} alt="British Heart Foundation" className={"icon " + variant} />
     </a>
   );
 };

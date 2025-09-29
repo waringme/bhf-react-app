@@ -143,7 +143,7 @@ const Home = () => {
           ❯
         </button>
       </div>
-      <FlightBookingForm />
+
       </ContentFragment>
       
       <SaleOffers />
