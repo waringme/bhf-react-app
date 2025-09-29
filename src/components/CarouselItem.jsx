@@ -8,7 +8,7 @@ const { REACT_APP_HOST_URI } = process.env;
 
 
 const CarouselItem = ({ cf, navigate }) => {
-  const image = REACT_APP_HOST_URI + cf?.bannerimage?._dynamicUrl;
+  const image = REACT_APP_HOST_URI + cf?.bannerimage?._path;
   const title = cf?.title;
   const subtitle = cf?.subtitle;
   const description = cf?.description;
