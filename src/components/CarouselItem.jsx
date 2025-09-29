@@ -8,12 +8,11 @@ const { REACT_APP_HOST_URI } = process.env;
 
 
 const CarouselItem = ({ cf, navigate }) => {
-  const image = REACT_APP_HOST_URI + cf?.backgroundImage?._path;
+  const image = REACT_APP_HOST_URI + cf?.bannerimage?._path;
   const title = cf?.title;
   const subtitle = cf?.subtitle;
-  const price = cf?.price;
-  const cta = cf?.cta;
-  const ctalink = cf?.ctaLink;
+  const description = cf?.description;
+
 
   return (
     <ContentFragment
@@ -32,17 +31,12 @@ const CarouselItem = ({ cf, navigate }) => {
           className="font-size-large"
         />
         <Text
-          content={price}
-          prop="price"
+          content={description}
+          prop="description"
           className="font-size-large carousel-price"
         />
-        <Text
-          content={cta}
-          prop="cta"
-          className="font-size-large cta-button"
-        />
-        <p>{ctalink}</p>
-      </div>
+        
+       </div>
     </ContentFragment>
   );
 };

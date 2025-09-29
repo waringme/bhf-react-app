@@ -305,7 +305,7 @@ export function useFlightPackageById(packageId, variation = "master", fetchTrigg
  * @param {String} variation the page variation
  * @returns a JSON object representing the Page
  */
-export function useBAPageBySlug(slug, variation = "master", fetchTrigger) {
+export function useBAPageBySlug(variation = "master", fetchTrigger) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -329,7 +329,7 @@ export function useBAPageBySlug(slug, variation = "master", fetchTrigger) {
     }
 
     fetchData();
-  }, [slug, variation, fetchTrigger]);
+  }, [ variation, fetchTrigger]);
 
   return { data, error };
 }

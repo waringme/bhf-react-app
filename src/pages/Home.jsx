@@ -23,7 +23,7 @@ const Home = () => {
   const { REACT_APP_HOST_URI } = process.env;
 
   //const { data } = usePageBySlug("home", selectedVariation, fetchTrigger);
-  const { data } = useBAPageBySlug("home", selectedVariation, fetchTrigger);
+  const { data } = useBAPageBySlug(selectedVariation, fetchTrigger);
 
   /*
   const flightPackages = useMemo(() => {
