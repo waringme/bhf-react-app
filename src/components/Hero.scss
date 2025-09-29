@@ -27,4 +27,20 @@
     width: 170px;
     height: 52px;
   }
+
+  .content-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
 }

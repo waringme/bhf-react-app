@@ -17,7 +17,7 @@ const Hero = ({ image, title, content }) => {
       <div className="container hero-wrapper">
         <div className="content-button-wrapper">
           <div className="content-wrapper">
-            <Title heading="h1" prop="title" className="color-light">TTTTTTTTTT
+            <Title heading="h1" prop="title" className="color-light">
               {title}
             </Title>
             <Text content={content} prop="content" className="color-grey" />
