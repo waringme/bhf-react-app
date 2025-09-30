@@ -28,36 +28,40 @@ const SaleOffers = ({ offers, setFetchTrigger }) => {
         </div>
 
         {/* Carousel Section */}
-        <div className="carousel">
-          <div
-            className="carousel-inner"
-            style={{
-              transform: `translateX(-${currentIndex * 100}%)`,
-            }}
-          >
-            {offers?.map((offer, index) => (
-              <div
-                key={offer.title}
-                className={`carousel-item ${
-                  index === currentIndex ? "active" : ""
-                }`}
-              >
-                <CarouselItem
-                  title="Carousel Item"
-                  cf={offer}
-                  setFetchTrigger={setFetchTrigger}
-                />
-              </div>
-            ))}
-          </div>
-
+        <div className="carousel-container">
           {/* Navigation Buttons */}
-          <button className="carousel-control prev" onClick={handlePrev}>
-            ❮
-          </button>
-          <button className="carousel-control next" onClick={handleNext}>
-            ❯
-          </button>
+          <div className="carousel-controls">
+            <button className="carousel-control prev" onClick={handlePrev}>
+              ❮
+            </button>
+            <button className="carousel-control next" onClick={handleNext}>
+              ❯
+            </button>
+          </div>
+          
+          <div className="carousel">
+            <div
+              className="carousel-inner"
+              style={{
+                transform: `translateX(-${currentIndex * 100}%)`,
+              }}
+            >
+              {offers?.map((offer, index) => (
+                <div
+                  key={offer.title}
+                  className={`carousel-item ${
+                    index === currentIndex ? "active" : ""
+                  }`}
+                >
+                  <CarouselItem
+                    title="Carousel Item"
+                    cf={offer}
+                    setFetchTrigger={setFetchTrigger}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
   
