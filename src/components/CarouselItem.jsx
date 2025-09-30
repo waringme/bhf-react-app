@@ -18,27 +18,30 @@ const CarouselItem = ({ cf, navigate }) => {
     <ContentFragment
       cf={cf}
     >         
-      <div
-        className="carousel-caption"
-        style={{ 
-          backgroundImage: image ? `url(${image})` : 'none',
-          backgroundColor: image ? 'transparent' : 'rgba(255, 255, 255, 0.9)'
-        }}>
-        <Title heading="h5" prop="title" className="color-light">
-          {title}
-        </Title>
-        <Text
-          content={subtitle}
-          prop="description"
-          className="font-size-large"
-        />
-        <Text
-          content={description}
-          prop="description"
-          className="font-size-large carousel-price"
-        />
-        
-       </div>
+      <div className="carousel-caption">
+        {image && (
+          <img 
+            src={image} 
+            alt={title || "Carousel image"} 
+            className="carousel-image"
+          />
+        )}
+        <div className="carousel-content">
+          <Title heading="h5" prop="title" className="color-light">
+            {title}
+          </Title>
+          <Text
+            content={subtitle}
+            prop="description"
+            className="font-size-large"
+          />
+          <Text
+            content={description}
+            prop="description"
+            className="font-size-large carousel-price"
+          />
+        </div>
+      </div>
     </ContentFragment>
   );
 };
