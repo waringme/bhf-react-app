@@ -5,6 +5,7 @@ import SO3 from "../assets/sale-offer-3.jpg"
 import SO4 from "../assets/sale-offer-4.jpg"
 import CarouselItem from "./CarouselItem";
 import "./SaleOffers.scss";
+import "./Carousel.scss";
 
 const SaleOffers = ({ offers, setFetchTrigger }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

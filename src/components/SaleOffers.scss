@@ -113,24 +113,44 @@
 
   }
 
-  .carousel {
-    margin-top: 0 !important;
-    margin-bottom: 2rem !important;
-    position: static !important;
-    z-index: 1 !important;
-    clear: both !important;
-    width: 800px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    overflow: hidden !important;
-    border-radius: 8px !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
-    background-color: rgba(255, 255, 255, 0.9) !important;
-    transform: none !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-  }
+.so-wrapper .carousel {
+  margin-top: 0 !important;
+  margin-bottom: 2rem !important;
+  position: static !important;
+  z-index: 1 !important;
+  clear: both !important;
+  width: 800px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  overflow: hidden !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  transform: none !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+}
+
+.so-block .carousel {
+  margin-top: 0 !important;
+  margin-bottom: 2rem !important;
+  position: static !important;
+  z-index: 1 !important;
+  clear: both !important;
+  width: 800px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  overflow: hidden !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  transform: none !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+}
 
 }
