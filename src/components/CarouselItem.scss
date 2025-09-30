@@ -20,10 +20,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #d32f2f;
-    border: 2px solid #b71c1c;
+    background-color: #fa0000;
+    border: 2px solid #d32f2f;
     position: relative;
-    font-family: "Mylius Modern", sans-serif;
+
   }
 
   .carousel-image {
@@ -39,8 +39,8 @@
     width: 100%;
     max-width: 400px;
     height: 200px;
-    background-color: #d32f2f;
-    border: 2px dashed #b71c1c;
+    background-color: #fa0000;
+    border: 2px dashed #d32f2f;
     border-radius: 8px;
     margin-bottom: 20px;
     display: flex;
@@ -60,17 +60,20 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    font-family: "Mylius Modern", sans-serif;
+
     
     h5 {
-      font-family: "Mylius Keyline", sans-serif;
-      font-weight: 600;
-      font-size: 1.5rem;
+      background-color: #fa0000;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #ffffff;
+   //   font-family: "BHF Beats Bold", Trebuchet MS, Trebuchet, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
     }
   }
   
   .carousel-price{
-    font-family: Mylius Modern,sans-serif;
     text-decoration-line: underline;
     letter-spacing: .025em;
     font-weight: 300;
