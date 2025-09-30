@@ -2,12 +2,10 @@ import React, { useState, useEffect, useMemo } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import ContentFragment from "../components/base/ContentFragment";
 import Hero from "../components/Hero";
-import CarouselItem from "../components/CarouselItem";
 
 import CallToActionSection from "../components/CallToActionSection";
 import { useBAPageBySlug } from "../api";
 import "./Home.scss";
-import "../components/CarouselItem.scss";
 import FlightBookingForm from "../components/FlightBookingForm";
 import SaleOffers from "../components/SaleOffers";
 
@@ -96,57 +94,13 @@ const Home = () => {
   const content = data?.content;
   const offers = data?.offers;
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % offers.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? offers.length - 1 : prevIndex - 1
-    );
-  };
-
   return (
     <>
       <ContentFragment cf={data}>
         <Hero image={image} title={title} content={content} />
-        <div className="carousel">
-          <div
-            className="carousel-inner"
-            style={{
-              transform: `translateX(-${currentIndex * 100}%)`,
-            }}
-          >
-            {offers?.map((offer, index) => (
-              <div
-                key={offer.title}
-                className={`carousel-item ${
-                  index === currentIndex ? "active" : ""
-                }`}
-              >
-                <CarouselItem
-                  title="Carousel Item"
-                  cf={offer}
-                  setFetchTrigger={setFetchTrigger}
-                />
-              </div>
-            ))}
-          </div>
-
-        {/* Navigation Buttons */}
-        <button className="carousel-control prev" onClick={handlePrev}>
-          ❮
-        </button>
-        <button className="carousel-control next" onClick={handleNext}>
-          ❯
-        </button>
-      </div>
-
       </ContentFragment>
       
-      <SaleOffers />
+      <SaleOffers offers={offers} setFetchTrigger={setFetchTrigger} />
 
       <img src="https://publish-p148716-e1519766.adobeaemcloud.com/content/dam/british-airways/banners/home-page-centre.png" alt="centre-image"  style={{ height: 'auto', width: '100%' }}/>
       <img src="https://publish-p148716-e1519766.adobeaemcloud.com/content/dam/british-airways/banners/home-page-bottom.png" alt="bottom-image"  style={{ height: 'auto', width: '100%' }}/>

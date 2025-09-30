@@ -8,7 +8,7 @@ const { REACT_APP_HOST_URI } = process.env;
 
 
 const CarouselItem = ({ cf, navigate }) => {
-  const image = REACT_APP_HOST_URI + cf?.bannerimage?.dynamicUrl;
+  const image = cf?.bannerimage?.dynamicUrl ? REACT_APP_HOST_URI + cf.bannerimage.dynamicUrl : null;
   const title = cf?.title;
   const subtitle = cf?.subtitle;
   const description = cf?.description;
@@ -17,11 +17,13 @@ const CarouselItem = ({ cf, navigate }) => {
   return (
     <ContentFragment
       cf={cf}
-      className="carousel-item"
     >         
       <div
-  className="carousel-caption"
-  style={{ backgroundImage: `url(${image})` }}>
+        className="carousel-caption"
+        style={{ 
+          backgroundImage: image ? `url(${image})` : 'none',
+          backgroundColor: image ? 'transparent' : 'rgba(255, 255, 255, 0.9)'
+        }}>
         <Title heading="h5" prop="title" className="color-light">
           {title}
         </Title>

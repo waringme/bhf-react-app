@@ -8,6 +8,22 @@
     height: auto;
     border-radius: 8px;
   }
+  
+  .carousel-caption {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px;
+    border-radius: 8px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #ccc;
+  }
+  
   .carousel-price{
     font-family: Mylius Modern,sans-serif;
     text-decoration-line: underline;

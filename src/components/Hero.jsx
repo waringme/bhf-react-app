@@ -6,7 +6,7 @@ import "./Hero.scss";
 
 const Hero = ({ image, title, content }) => {
   return (
-    <div className="background-blue" style={{
+    <div style={{
       backgroundImage: `url(${image})`,
       backgroundSize: "cover",
       backgroundPosition: "center",
@@ -22,9 +22,7 @@ const Hero = ({ image, title, content }) => {
             </Title>
             <Text content={content} prop="content" className="color-grey" />
           </div>
-          <RedirectButton href="/services" className="hover-effect">
-            Our Services
-          </RedirectButton>
+          
         </div>
       </div>
     </div>
