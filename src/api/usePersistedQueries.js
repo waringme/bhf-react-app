@@ -305,31 +305,42 @@ export function useFlightPackageById(packageId, variation = "master", fetchTrigg
  * @param {String} variation the page variation
  * @returns a JSON object representing the Page
  */
-export function useBAPageBySlug(variation = "master", fetchTrigger) {
+export function useBAPageBySlug(slug, variation = "master", fetchTrigger) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
       const queryVariables = {
-   
+        slug,
         variation,
       };
+
+      console.log('useBAPageBySlug - Fetching with:', {
+        endpoint: REACT_APP_BA_ENDPOINT + "/page-by-slug",
+        queryVariables
+      });
 
       const response = await fetchPersistedQuery(
         REACT_APP_BA_ENDPOINT + "/page-by-slug",
         queryVariables
       );
 
+      console.log('useBAPageBySlug - Response:', response);
+
       if (response?.err) {
+        console.error('useBAPageBySlug - Error:', response.err);
         setError(response.err);
       } else if (response?.data?.homePageList?.items?.length === 1) {
+        console.log('useBAPageBySlug - Success:', response.data.homePageList.items[0]);
         setData(response.data.homePageList.items[0]);
+      } else {
+        console.warn('useBAPageBySlug - No data found or unexpected structure:', response?.data);
       }
     }
 
     fetchData();
-  }, [ variation, fetchTrigger]);
+  }, [slug, variation, fetchTrigger]);
 
   return { data, error };
 }
