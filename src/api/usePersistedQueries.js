@@ -312,17 +312,18 @@ export function useBAPageBySlug(slug, variation = "master", fetchTrigger) {
   useEffect(() => {
     async function fetchData() {
       const queryVariables = {
-        slug,
+        path: "/content/dam/bhf/en/fragments/home-page-react",
         variation,
       };
 
       console.log('useBAPageBySlug - Fetching with:', {
-        endpoint: REACT_APP_BA_ENDPOINT + "/page-by-slug",
+        endpoint: REACT_APP_BA_ENDPOINT + "/GetPageByPath",
+        
         queryVariables
       });
 
       const response = await fetchPersistedQuery(
-        REACT_APP_BA_ENDPOINT + "/page-by-slug",
+        REACT_APP_BA_ENDPOINT + "/GetPageByPath",
         queryVariables
       );
 
@@ -362,7 +363,7 @@ export function useBAPageBySlug(slug, variation = "master", fetchTrigger) {
     }
 
     fetchData();
-  }, [slug, variation, fetchTrigger]);
+  }, [variation, fetchTrigger]);
 
   return { data, error };
 }
