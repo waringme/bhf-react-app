@@ -338,6 +338,8 @@ export function useBAPageBySlug(slug, variation = "master", fetchTrigger) {
         let items = null;
         if (response.data.homePageList?.items?.length >= 1) {
           items = response.data.homePageList.items[0];
+        } else if (response.data.homePageByPath?.item) {
+          items = response.data.homePageByPath.item;
         } else if (response.data.pageList?.items?.length >= 1) {
           items = response.data.pageList.items[0];
         } else if (response.data.homeList?.items?.length >= 1) {
@@ -349,6 +351,10 @@ export function useBAPageBySlug(slug, variation = "master", fetchTrigger) {
           setData(items);
         } else {
           console.warn('useBAPageBySlug - No items found in any expected structure:', response.data);
+          console.warn('useBAPageBySlug - Available keys:', Object.keys(response.data));
+          // Set the raw response data if no expected structure is found
+          console.log('useBAPageBySlug - Setting raw response data');
+          setData(response.data);
         }
       } else {
         console.warn('useBAPageBySlug - No data in response:', response);
