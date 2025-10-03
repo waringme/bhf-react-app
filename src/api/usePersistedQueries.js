@@ -331,11 +331,27 @@ export function useBAPageBySlug(slug, variation = "master", fetchTrigger) {
       if (response?.err) {
         console.error('useBAPageBySlug - Error:', response.err);
         setError(response.err);
-      } else if (response?.data?.homePageList?.items?.length === 1) {
-        console.log('useBAPageBySlug - Success:', response.data.homePageList.items[0]);
-        setData(response.data.homePageList.items[0]);
+      } else if (response?.data) {
+        console.log('useBAPageBySlug - Full response data:', response.data);
+        
+        // Try different possible response structures
+        let items = null;
+        if (response.data.homePageList?.items?.length >= 1) {
+          items = response.data.homePageList.items[0];
+        } else if (response.data.pageList?.items?.length >= 1) {
+          items = response.data.pageList.items[0];
+        } else if (response.data.homeList?.items?.length >= 1) {
+          items = response.data.homeList.items[0];
+        }
+        
+        if (items) {
+          console.log('useBAPageBySlug - Success:', items);
+          setData(items);
+        } else {
+          console.warn('useBAPageBySlug - No items found in any expected structure:', response.data);
+        }
       } else {
-        console.warn('useBAPageBySlug - No data found or unexpected structure:', response?.data);
+        console.warn('useBAPageBySlug - No data in response:', response);
       }
     }
 
