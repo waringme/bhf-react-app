@@ -317,8 +317,8 @@ export function useBAPageBySlug(slug, variation = "master", fetchTrigger) {
       };
 
       console.log('useBAPageBySlug - Fetching with:', {
-        endpoint: REACT_APP_BA_ENDPOINT + "/GetPageByPath",
-        
+        //endpoint: REACT_APP_BA_ENDPOINT + "/GetPageByPath",
+        endpoint: REACT_APP_BA_ENDPOINT + "/page-by-slug",
         queryVariables
       });
 
