@@ -323,7 +323,7 @@ export function useBAPageBySlug(slug, variation = "master", fetchTrigger) {
       });
 
       const response = await fetchPersistedQuery(
-        REACT_APP_BA_ENDPOINT + "/GetPageByPath",
+        REACT_APP_BA_ENDPOINT + "/page-by-slug",
         queryVariables
       );
 
